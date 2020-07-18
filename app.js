@@ -8,7 +8,7 @@ var config = require('./config');
 var T = new Twitter(config);
 
 // stream('user') does not work anymore
-var stream = T.stream('statuses/filter', { track: ['@DaniloC3001'] });
+var stream = T.stream('statuses/filter', { track: ['@<YOUR USER>'] });
 
 stream.on('tweet', tweetEvent);
 
@@ -24,7 +24,7 @@ function tweetEvent(tweet) {
     var id = tweet.id_str;
 
     // Ok, if this was in reply to me
-    if (reply_to === 'DaniloC3001') {
+    if (reply_to === '<YOUR USER>') {
 
         // the reply text
         var replyText = '@'+name + ' ' + ' hey there! This is my bot. The real me will reply to you soon!';
